@@ -1,0 +1,13 @@
+{
+    "name": "root/mynewproject",
+    "autoload": {
+        "psr-4": {"Src\\": "src/"}
+    },
+    "authors": [
+        {
+            "name": "ludoguenet",
+            "email": "ludovicguenet@gmx.com"
+        }
+    ],
+    "require": {}
+}
