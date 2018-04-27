@@ -2,7 +2,7 @@
 
 namespace Src\Routing;
 
-use Src\RoutingException\Exception;
+use Src\Routing\RoutingException\Exception;
 
 class Router
 {

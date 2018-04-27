@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\RoutingException;
+namespace Src\Routing\RoutingException;
 
 class Exception extends \Exception
 {
