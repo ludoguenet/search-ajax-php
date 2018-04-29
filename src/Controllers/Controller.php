@@ -4,13 +4,12 @@ namespace Src\Controllers;
 
 use Src\App;
 
-
-class Controller
+abstract class Controller
 {
     protected $defaultPath = WEBROOT . 'views/template/default.php';
     protected $viewPath = WEBROOT . 'views/';
 
-    protected function render(string $path, array $params = null) : void
+    protected function render(string $path, array $params = null): void
     {
         ob_start();
         if ($params) {
@@ -27,8 +26,7 @@ class Controller
     protected function loadModel($model_name)
     {
         $class_name = 'Src\\Models\\' . ucfirst($model_name) . 'Model';
-        $app = App::getApp();
-        $this->$model_name = new $class_name($app->getMySQLFactory());
+        $this->$model_name = new $class_name(App::getApp()->getMySQLFactory());
     }
 
     protected function isAjax()

@@ -2,12 +2,12 @@
 
 namespace Src;
 
+use Src\Auth\DatabaseAuth;
 use Src\Database\MySQLDB;
-
 
 class App
 {
-    static private $app_instance;
+    private static $app_instance;
     private $mysql_instance;
 
     public static function getApp()
@@ -25,5 +25,10 @@ class App
             $this->mysql_instance = $MySQL;
         }
         return $this->mysql_instance;
+    }
+
+    public function getAuth()
+    {
+        return new DatabaseAuth($this->getMySQLFactory());
     }
 }
