@@ -13,7 +13,11 @@ $router->post('login', 'Src\\Controllers\\BlogController@login');
 
 // Admin routes
 $router->get('admin', 'Src\\Controllers\\Admin\\BlogController@index');
+$router->get('admin/posts/edit/:id', 'Src\\Controllers\\Admin\\BlogController@edit');
+$router->post('admin/posts/edit/:id', 'Src\\Controllers\\Admin\\BlogController@edit');
+$router->get('admin/posts/create', 'Src\\Controllers\\Admin\\BlogController@create');
+$router->post('admin/posts/create', 'Src\\Controllers\\Admin\\BlogController@create');
+$router->post('admin/posts/delete', 'Src\\Controllers\\Admin\\BlogController@delete');
 
 // Lancement du système de routing
 $router->run();
-
